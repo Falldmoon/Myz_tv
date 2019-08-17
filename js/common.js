@@ -29,13 +29,25 @@ $(document).ready(function () {
             }
         ]
   })
+  $('.right-login').on('click', function() {
+    $('.window-enter').toggleClass('login-active');
+    $('.window-white').toggleClass('white-active');
+  })
   $('.login-exit').on('click', function() {
   	$('.window-enter').toggleClass('login-active');
   	$('.window-white').toggleClass('white-active');
+    for (let i = $('.window-login').length - 1; i >= 0; i--) {
+      let element = $('.window-login')[i]; 
+      $(element).removeClass('login-active')
+    }
   })
   $('.login-exit-mobile').on('click', function() {
     $('.window-enter').toggleClass('login-active');
     $('.window-white').toggleClass('white-active');
+    for (let i = $('.window-login').length - 1; i >= 0; i--) {
+      let element = $('.window-login')[i]; 
+      $(element).removeClass('login-active')
+    }
   })
   $('.wrapper-accordion').on('click', function() {
     let arr = $('.wrapper-accordion');
