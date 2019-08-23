@@ -137,11 +137,10 @@ $(document).ready(function () {
  }
 
  if (ieVersion) {
-     alert(1);
      b.className = ieVersion;
      
  } else {
-  $('.profile').addClass('profile-ie');
+  
  }
 
  /*
