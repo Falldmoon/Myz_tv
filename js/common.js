@@ -122,7 +122,7 @@ $(document).ready(function () {
 
      if (s[property] != undefined) {
          ieVersion = "ie10";
-         createEl("IE10 style found: " + property);
+         
      }
  }
 
