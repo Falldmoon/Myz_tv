@@ -132,17 +132,16 @@ $(document).ready(function () {
 
      if (s[property] != undefined) {
          ieVersion = "ie11";
-         createEl("IE11 style found: " + property);
+         
      }
  }
 
  if (ieVersion) {
      alert(1);
      b.className = ieVersion;
-     $('#versionId').html('Version: ' + ieVersion);
+     
  } else {
-     alert(2)
-     createEl('Not IE10 or 11.');
+  $('.profile').addClass('profile-ie');
  }
 
  /*
