@@ -10,6 +10,17 @@ $(document).ready(function () {
     nextArrow: $('.arrow-right'),
 
   })
+  $('.profile-tab').on('click', function() {
+    for (let i = $('.profile-tab').length - 1; i >= 0; i--) {
+      let element = $('.profile-tab')[i]
+      if ( element != this) {
+        $(element).removeClass('tab-active');
+      }
+      else{
+        $(element).addClass('tab-active');
+      }
+    }
+  })
   $('.blocks .container .row').slick({
     adaptiveHeight: true,
     fade: false,
