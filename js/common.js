@@ -10,6 +10,9 @@ $(document).ready(function () {
     nextArrow: $('.arrow-right'),
 
   })
+  $('.email-up').on('click', function() {
+    $('.profile-email').toggleClass('email-active')
+  })
   $('.profile-tab').on('click', function() {
     for (let i = $('.profile-tab').length - 1; i >= 0; i--) {
       let element = $('.profile-tab')[i]
@@ -18,6 +21,16 @@ $(document).ready(function () {
       }
       else{
         $(element).addClass('tab-active');
+      }
+    }
+  })
+  $('.link-edit').on('click', function() {
+    let elemens = this.classList[1]
+    elemens = `.${elemens}`
+    for (var i = $(elemens).length - 1; i >= 0; i--) {
+      if (this != $(elemens)[i]) {
+        $(elemens)[i].style.display = 'flex'
+        this.style.display = 'none'
       }
     }
   })
@@ -147,9 +160,7 @@ $(document).ready(function () {
   * Just a little helper to create a DOM element
   */
  function createEl(content) {
-     el = d.createElement('div');
-     el.innerHTML = content;
-     b.appendChild(el);
+     
  }
 
  /*
