@@ -24,6 +24,20 @@ $(document).ready(function () {
       }
     }
   })
+  // Проверка состаяние батарейки
+  let battery = $('.battery-block')[0];
+  if ($(battery).hasClass('active-left') && $(battery).hasClass('active-right') && $(battery).hasClass('active-center')) {
+    $(battery).addClass('active-full');
+  }
+  else if ($(battery).hasClass('active-left') && $(battery).hasClass('active-right')) {
+    $(battery).addClass('active-left-right');
+  }
+  else if($(battery).hasClass('active-left') && $(battery).hasClass('active-center')){
+    $(battery).addClass('active-left-center');
+  }
+  else if($(battery).hasClass('active-right') && $(battery).hasClass('active-center')){
+    $(battery).addClass('active-right-center');
+  }
   $('.link-edit').on('click', function() {
     let elemens = this.classList[1]
     elemens = `.${elemens}`
