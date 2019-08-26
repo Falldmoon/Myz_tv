@@ -13,7 +13,7 @@ $(document).ready(function () {
   $('.email-up').on('click', function() {
     $('.profile-email').toggleClass('email-active')
   })
-  $('.profile-tab').on('click', function() {
+  $(document).on('click', '.profile-tab', function() {
     for (let i = $('.profile-tab').length - 1; i >= 0; i--) {
       let element = $('.profile-tab')[i]
       if ( element != this) {
@@ -53,10 +53,12 @@ $(document).ready(function () {
             }
         ]
   })
+  /*
   $('.right-login').on('click', function() {
     $('.window-enter').toggleClass('login-active');
     $('.window-white').toggleClass('white-active');
   })
+  */
   $('.login-exit').on('click', function() {
   	$('.window-enter').toggleClass('login-active');
   	$('.window-white').toggleClass('white-active');
@@ -73,7 +75,10 @@ $(document).ready(function () {
       $(element).removeClass('login-active')
     }
   })
-  $('.wrapper-accordion').on('click', function() {
+  $('.wrapper-accordion').on('click', function(event) {
+    if(event.target.tagName.toLowerCase() === 'input') {
+        return;
+    }
     let arr = $('.wrapper-accordion');
     let element = this;
     $(element).toggleClass('accordion-active');
